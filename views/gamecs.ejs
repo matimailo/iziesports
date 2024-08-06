@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-item">
+            <button class="sidebar-button" onclick="toggleSubMenu('submenu1')">Category 1</button>
+            <div id="submenu1" class="sidebar-submenu">
+                <button onclick="changeVideo('https://www.youtube.com/embed/VIDEO_ID_1')">Video 1</button>
+                <button onclick="changeVideo('https://www.youtube.com/embed/VIDEO_ID_2')">Video 2</button>
+                <button onclick="changeVideo('https://www.youtube.com/embed/VIDEO_ID_3')">Video 3</button>
+            </div>
+        </div>
+        <div class="sidebar-item">
+            <button class="sidebar-button" onclick="toggleSubMenu('submenu2')">Category 2</button>
+            <div id="submenu2" class="sidebar-submenu">
+                <button onclick="changeVideo('https://www.youtube.com/embed/VIDEO_ID_4')">Video 4</button>
+                <button onclick="changeVideo('https://www.youtube.com/embed/VIDEO_ID_5')">Video 5</button>
+                <button onclick="changeVideo('https://www.youtube.com/embed/VIDEO_ID_6')">Video 6</button>
+            </div>
+        </div>
+    </div>
+    <main class="main-content">
+        <iframe id="video-frame" src="https://www.youtube.com/embed/VIDEO_ID_DEFAULT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </main>
+    <script>
+        function toggleSubMenu(id) {
+            var submenu = document.getElementById(id);
+            if (submenu.style.display === "block") {
+                submenu.style.display = "none";
+            } else {
+                submenu.style.display = "block";
+            }
+        }
+
+        function changeVideo(url) {
+            var videoFrame = document.getElementById("video-frame");
+            videoFrame.src = url;
+        }
+    </script>
+</body>
+</html>

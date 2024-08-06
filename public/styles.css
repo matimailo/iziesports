@@ -1,0 +1,231 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #0ff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #111;
+    width: 250px;
+    padding: 10px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.sidebar-item {
+    margin-bottom: 10px;
+}
+
+.sidebar-button {
+    background-color: #222;
+    color: #0ff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.sidebar-submenu {
+    display: none;
+    padding-left: 10px;
+}
+
+.sidebar-submenu button {
+    background-color: #333;
+    color: #0ff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.main-content {
+    margin-left: 260px; /* Sidebar width + some margin */
+    padding: 20px;
+    flex: 1;
+}
+
+.main-content iframe {
+    width: 100%;
+    height: 80vh;
+    border-radius: 8px;
+}
+
+.main-content-games {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.center-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.icon {
+    margin: 50px;
+    cursor: pointer;
+}
+
+.icon img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.icon p {
+    color: #0ff;
+}
+
+.navbar {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #0ff;
+    text-decoration: none;
+}
+
+.header-content {
+    background: url('homeimage.jpg') no-repeat center center/cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.header-content h1 {
+    color: #0ff;
+    font-size: 3em;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #111;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: calc(25% - 40px);
+}
+
+.card iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: #0ff;
+    text-decoration: none;
+}
+
+.contact-info {
+    margin-top: 10px;
+}
+
+.info-icon {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.info-icon::before {
+    content: '!';
+    display: inline-block;
+    background-color: #0ff;
+    color: black;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 12px;
+}
+.tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 105%; /* Adjust to position tooltip to the right */
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    width: 200px;
+}
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -5px; /* Position the arrow on the left */
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+.info-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.sidebar-button-container {
+    display: flex;
+    align-items: center;
+}
